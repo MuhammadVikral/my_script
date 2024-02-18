@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(find ~/kerjaan ~/.config/ -mindepth 1 -maxdepth 5 -type d | fzf)
+	selected=$(find ~/kerjaan ~/.config/ ~/.tmux.conf ~/myScript/ -mindepth 0 -maxdepth 5 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
