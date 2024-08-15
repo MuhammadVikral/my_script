@@ -32,6 +32,6 @@ if ! tmux list-windows -t $selected_name -F '#{window_name}' | grep -q '^nodemon
 fi
 
 #run the flutter run and nodemon watch and then switch to runner client
-tmux send-keys -t $selected_name:1 "fvm flutter run $4 $2 $3 $4 --pid-file=/tmp/tf1.pid" Enter
+tmux send-keys -t $selected_name:1 "fvm flutter run $4 $2 $3 $4 --pid-file=/tmp/tf1.pid --target lib/main.dart --flavor dev" Enter
 tmux send-keys -t $selected_name:nodemon 'npx -y nodemon --watch . -e dart -x "cat /tmp/tf1.pid | xargs kill -s USR1"' Enter
 tmux switch-client -t "$selected_name:1"
