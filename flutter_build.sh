@@ -8,7 +8,7 @@ version="${today}$(printf "%02d" $build)"
 
 echo "Build version: $build_name $version"
 
-fvm flutter build appbundle --release --flavor "regression" \
+fvm flutter build appbundle --release --flavor "production" \
   --build-number "$version" --build-name "$build_name" \
   --dart-define="version=$build_name" \
   --obfuscate --split-debug-info=build/flutter_mapping
